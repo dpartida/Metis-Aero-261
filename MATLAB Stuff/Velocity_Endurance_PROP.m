@@ -4,7 +4,7 @@ clear,clc
 W=2450; %weight of aircraft
 S=174; %wing area %aspect ratio
 p=.0023; %air density
-K=.05; 
+K=0.0542; 
 C_D0=0.03;
 
 v_BR=sqrt(((2*(W/S))/p)*sqrt(K/(3*C_D0)));

@@ -3,7 +3,7 @@ clear,clc
 W=14500; %Weight of aircraft (lb) as a constant
 S=264; %wing area of aircraft (ft^2)
 c_D0=0.014; %drag constant
-K=0.056;
+K=0.0542;
 T1=7000; %thrust given by the engines of the aircraft (lb)
 p_h=input('What is the air density of the current altitude (slug/ft^3)?: ');
 p_SL=0.0023769; %air density at sea level (slug/ft^3)
