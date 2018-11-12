@@ -1,3 +1,3 @@
- clear,clc
+clear,clc
 
 Re =;
