@@ -47,7 +47,8 @@ title('Cl v. Cd 3D Wing')
 xlabel('Cd')
 ylabel('Cl')
 
-[ClStall, loc] = max(Cl) %find the coefficient of lift at stall and its location in the vector
-alphaStall = data(loc,1) %find the alpha stall based on the coefficient of lift
+[ClStall, loc] = max(Cl) %find the coefficient of lift at stall and its location in the vector (range of varying Cl values)
+alphaStall = data(loc,1) %find the stall angle of attack based on the coefficient of lift
 [ClZeroLift, loc] = min(abs(Cl-0)) %finds location of closest coefficient of lift value in vector to zero 
 alphaZeroLift = data(loc,1) %find the value of alpha from the zero lift curve
+
