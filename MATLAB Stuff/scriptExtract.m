@@ -51,3 +51,4 @@ ylabel('Cl')
 alphaStall = data(loc,1) %find the alpha stall based on the coefficient of lift
 [ClZeroLift, loc] = min(abs(Cl-0)) %finds location of closest coefficient of lift value in vector to zero 
 alphaZeroLift = data(loc,1) %find the value of alpha from the zero lift curve
+
