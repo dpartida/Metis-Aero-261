@@ -17,6 +17,8 @@ K=1/(pi*e_0*AR); %Another constant
 TSFC = 9.7 %thrust specific fuel consumption (g/kN/s)
 T = 226.860*4 %kN, four engines
 
+Em = liftdragmax(K,C_D0)
+
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
 d_BR = maxrangecalculator(v_BR,t)
