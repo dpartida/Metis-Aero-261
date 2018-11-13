@@ -1,9 +1,10 @@
 clear,
 clc
 
-AR = 7
+AR = 7;
 p_0 = 1.225;
-p = .46148
+p = .46148; %at 9.1 km
+p_r = (p/p_0);
 v = 5;
 S = 100; %wing area
 b = 25; %
@@ -13,7 +14,8 @@ C_D0 = 0.02;
 t = 4; %random travel time in hours
 e_0=0.84; %Oswald Span Efficiency Factor constant of Boeing 747-300
 K=1/(pi*e_0*AR); %Another constant
-
+TSFC = 9.7 %thrust specific fuel consumption (g/kN/s)
+T = 226.860*4
 
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
@@ -23,4 +25,6 @@ v_BE = maxenduranceairspeed(W,S,p,K,C_D0)
 
 v_stall = stallspeed(W,S,p)
 
-thrustcalculator(W,p,C_D0,K,S)
+thrustcalculator(W,p,C_D0,K,S);
+
+f_W = fuelweight(TSFC,T,p_r,t)
