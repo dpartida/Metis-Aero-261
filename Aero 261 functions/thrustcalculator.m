@@ -1,6 +1,8 @@
 function [C_L,Treq] = thrustcalculator(W,p,C_D0,K,S)
-%UNTITLED6 Summary of this function goes here
-%   Detailed explanation goes here
+%This equation calculates thrust required for steady level flight vs
+%airspeed
+%   This calculates thrust required for steady level flight using the
+%   variables W(weight), p(air density), C_D0, K, S(wing area)
 
 Treq=zeros(1,47); %sets up row matrix of 47 zeros to iterate 46 different Velocity values through the "for loop" to calculate Thrust required at each velocity 
 C_L=zeros(1,47); %same thing but for calculating Coefficient of Lift at each velocity value
