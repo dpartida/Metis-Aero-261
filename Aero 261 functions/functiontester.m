@@ -15,7 +15,7 @@ t = 4; %random travel time in hours
 e_0=0.84; %Oswald Span Efficiency Factor constant of Boeing 747-300
 K=1/(pi*e_0*AR); %Another constant
 TSFC = 9.7 %thrust specific fuel consumption (g/kN/s)
-T = 226.860*4
+T = 226.860*4 %kN, four engines
 
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
@@ -28,3 +28,5 @@ v_stall = stallspeed(W,S,p)
 thrustcalculator(W,p,C_D0,K,S);
 
 f_W = fuelweight(TSFC,T,p_r,t)
+
+f_V = fuelvolume(f_W)
