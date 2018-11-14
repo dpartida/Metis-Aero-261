@@ -15,14 +15,14 @@ v = 5;
 S = 576; %wing area (m^s)
 sw = 27.5; % sweep angle (degrees)
 u = 1.7907*(10^-5); %something with air?
-<<<<<<< HEAD
+%<<<<<<< HEAD
 W = 426000; %total aircraft weight fully stocked
 C_D0 = 0.02;
 Cd0=0.02;
-=======
+%=======
 W = 30000;
 C_D0 = 0.00485;
->>>>>>> 2e7a952f7f4fb873c2e34b5961cc3d8fac571c12
+%>>>>>>> 2e7a952f7f4fb873c2e34b5961cc3d8fac571c12
 t = 4; %random travel time in hours
 e_0=0.84; %Oswald Span Efficiency Factor constant of Boeing 747-300
 K=1/(pi*e_0*AR); %Another constant
