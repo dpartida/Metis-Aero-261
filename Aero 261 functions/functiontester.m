@@ -5,6 +5,8 @@ filename = uigetfile('polardataXFLR5.txt');
 [ data, mach, reynoldsNumber, nCrit ] = extractPolarData(filename); %extracts xflr5 polar data, converts into matlab data
 
 h = input('What is your cruise altitude?')
+b=70; %wingspan in meters
+c=10; %average chord length
 AR = 7; % aspect ratio
 p_0 = 1.225; % pressure at sea level
 p = .46148; %at 9.1 km
@@ -25,7 +27,6 @@ e=1.78*(1-(0.045*(AR^0.68)))-0.64; %calculates span efficiency factor for 2D air
 a0=0.115;
 a=(a0*cosd(sw))/(1+(1/K)*a0*cosd(sw));%equation to convert 2D lift curve slope to 3D lift curve slope
 ratio = a/a0;
-Cd0=0.00485;
 
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
