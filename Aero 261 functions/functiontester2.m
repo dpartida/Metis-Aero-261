@@ -55,7 +55,7 @@ alphaZeroLift = data(loc,1) %find the value of alpha from the zero lift curve
 
 %------------------------------------Functions----------------------------------------------------
 
-Em = liftdragmax(K,C_D0)
+Em = liftdragmax(K,C_D0);
 
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
