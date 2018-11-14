@@ -59,7 +59,7 @@ Em = liftdragmax(K,C_D0);
 
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
-d_BR = maxrangecalculator(v_BR,t)
+d_BR = maxrangecalculator(v_BR,TSFC,t,p_r,W_2,dW)
 
 v_BE = maxenduranceairspeed(W,S,p,K,C_D0)
 
