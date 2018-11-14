@@ -4,10 +4,16 @@ clc
 filename = uigetfile('polardataXFLR5.txt');
 [ data, mach, reynoldsNumber, nCrit ] = extractPolarData(filename); %extracts xflr5 polar data, converts into matlab data
 
+<<<<<<< HEAD
 AR = 7;
 p_0 = 1.225;
+=======
+h = input('What is your cruise altitude?')
+AR = 7; % aspect ratio
+p_0 = 1.225; % pressure at sea level
+>>>>>>> 0a6aa661fa04114c3598a44047c2f929a393bd8c
 p = .46148; %at 9.1 km
-p_r = (p/p_0);
+p_r = (p/p_0); 
 v = 5;
 S = 100; %wing area
 b = 25; %
@@ -24,6 +30,7 @@ e=1.78*(1-(0.045*(AR^0.68)))-0.64; %calculates span efficiency factor for 2D air
 a0=0.115;
 a=(a0*cosd(sw))/(1+(1/K)*a0*cosd(sw));%equation to convert 2D lift curve slope to 3D lift curve slope
 ratio = a/a0;
+<<<<<<< HEAD
 Cd0=0.00485;
 
 for i=1:45
@@ -53,6 +60,8 @@ alphaZeroLift = data(loc,1) %find the value of alpha from the zero lift curve
 %------------------------------------Functions----------------------------------------------------
 
 Em = liftdragmax(K,C_D0)
+=======
+>>>>>>> 0a6aa661fa04114c3598a44047c2f929a393bd8c
 
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
@@ -67,4 +76,31 @@ thrustcalculator(W,p,C_D0,K,S);
 f_W = fuelweight(TSFC,T,p_r,t)
 
 f_V = fuelvolume(f_W)
+<<<<<<< HEAD
+=======
+
+for i=1:45
+    Cl(1,i)=ratio*data(i,2);
+    Cd(1,i)=Cd0+K*(Cl(1,i))^2;
+end
+
+%plot of coefficient of lift vs angle of attack
+figure(3)
+plot(data(:,1),Cl)
+title('Cl v. Alpha 3D Wing')
+xlabel('Alpha')
+ylabel('Cl')
+%plot of coefficient of lift vs coefficient of drag
+
+figure(4)
+plot(Cd,Cl)
+title('Cl v. Cd 3D Wing')
+xlabel('Cd')
+ylabel('Cl')
+
+[ClStall, loc] = max(Cl) %find the coefficient of lift at stall and its location in the vector
+alphaStall = data(loc,1) %find the alpha stall based on the coefficient of lift
+[ClZeroLift, loc] = min(abs(Cl-0)) %finds location of closest coefficient of lift value in vector to zero 
+alphaZeroLift = data(loc,1) %find the value of alpha from the zero lift curve
+>>>>>>> 0a6aa661fa04114c3598a44047c2f929a393bd8c
 
