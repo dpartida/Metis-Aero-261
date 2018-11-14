@@ -17,12 +17,13 @@ sw = 27.5; % sweep angle
 u = 1.7907*(10^-5); %something with air?
 W = 30000;
 C_D0 = 0.00485;
-dW = 153
+Cd0=0.00485;
+dW = 153;
 t = 4; %random travel time in hours
 e_0=0.84; %Oswald Span Efficiency Factor constant of Boeing 747-300
 K=1/(pi*e_0*AR); %Another constant
-TSFC = 9.7 %thrust specific fuel consumption (g/kN/s)
-T = 226.860*4 %kN, four engines
+TSFC = 9.7; %thrust specific fuel consumption (g/kN/s)
+T = 226.860*4; %kN, four engines
 e=1.78*(1-(0.045*(AR^0.68)))-0.64; %calculates span efficiency factor for 2D airfoil lift curve slope
 a0=0.115;
 a=(a0*cosd(sw))/(1+(1/K)*a0*cosd(sw));%equation to convert 2D lift curve slope to 3D lift curve slope
@@ -54,7 +55,7 @@ alphaZeroLift = data(loc,1) %find the value of alpha from the zero lift curve
 
 %------------------------------------Functions----------------------------------------------------
 
-Em = liftdragmax(K,C_D0)
+Em = liftdragmax(K,C_D0);
 
 v_BR = maxrangeairspeed(W,S,p,K,C_D0)
 
