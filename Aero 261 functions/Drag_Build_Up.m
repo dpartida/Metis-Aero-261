@@ -1,35 +1,39 @@
-function [Total] = Drag_Build_Up(Re)
+function [Total] = Drag_Build_Up(Re,L,d,b,c,be,ce,he,Ln,dn)
 
 Cf = 1.328/Re;
 
-SRefWing = 576;
-SWetWing = 576*2;
+SRefWing = b*c;
+SWetWing = b*c*2;
 
 
-fWing = 10/((4/pi)*576)^(1/2);
+fWing = 10/(sqrt((4/pi)*SRefWing));
 
-% length or chord length = 10m
-% A = 576m^2
+% Chord length = c
+% S = b*c
 
 FFWing = (1+(60/fWing^3)+(fWing/400));
 
 CD_Wing = (Cf*FFWing*1*SWetWing)/SRefWing;
 %""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-SWetFuselage = 1;
-SRefFuselage = 1;
+SWetFuselage = (2*pi*(d/2))*L; % Circumference times the length
+SRefFuselage = d*L; % Diameter of the fuselage times the length of the fuselage
+A = (pi)*((d/2))^2; % Area of fuselage cross section
+fFuselage = L/(sqrt((4/pi)*A));
 
-fFuselage = 75.32/((4/pi)*6.43)^(1/2);
+% length of fuselage = l
 
-% length or chord length = 75.32m
-% A = 6.43m^2
 
 FFFuselage = (1+(60/fFuselage^3)+(fFuselage/400));
 
 CD_Fuselage = (Cf*FFFuselage*1*SWetFuselage)/SRefFuselage;
 %""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-fEmpennage = 10/((4/pi)*576)^(1/2);
+Atotal = 2*(be*ce) + (he*ce);
+SRefEmpennage = Atotal;
+SWetEmpennage = Atotal * 2;
+
+fEmpennage = 10/((sqrt(4/pi)*Atotal));
 
 % length or chord length = 10m
 % A = 576m^2
@@ -38,18 +42,21 @@ FFEmpennage = (1+(60/fEmpennage^3)+(fEmpennage/400));
 
 CD_Empennage = (Cf*FFEmpennage*1*SWetEmpennage)/SRefEmpennage;
 %""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Anacelle = (pi*(dn/2)^2);
+SRefNacelles = (Ln*dn);
+SWetNacelles = 2*(pi*(dn/2))*Ln*4; % Calculates urface are of nacelles a and accounting for 4 engines
+fNacelles = 10/((4/pi)*Anacelle)^(1/2);
 
-fNacelles = 10/((4/pi)*576)^(1/2);
+% length or chord length = Ln
 
-% length or chord length = 10m
-% A = 576m^2
 
-FFNacelles = (1+(60/fNacelles^3)+(fNacelles/400));
+FFNacelles = (1+(.35/fNacelles));
 
-CD_Nacelles = (Cf*FFNacelles*1*SWetNacelles)/SRefNacelles;
+CD_Nacelles = (Cf*FFNacelles*1.5*SWetNacelles)/SRefNacelles;
 %""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Total = CD_Wing + CD_Fuselage + CD_Empennage + CD_Nacelles;
+
 
 end
 
