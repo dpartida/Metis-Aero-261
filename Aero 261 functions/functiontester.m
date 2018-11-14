@@ -4,10 +4,11 @@ clc
 filename = uigetfile('polardataXFLR5.txt');
 [ data, mach, reynoldsNumber, nCrit ] = extractPolarData(filename); %extracts xflr5 polar data, converts into matlab data
 
-AR = 7;
-p_0 = 1.225;
+h = input('What is your cruise altitude?')
+AR = 7; % aspect ratio
+p_0 = 1.225; % pressure at sea level
 p = .46148; %at 9.1 km
-p_r = (p/p_0);
+p_r = (p/p_0); 
 v = 5;
 S = 100; %wing area
 b = 25; %
