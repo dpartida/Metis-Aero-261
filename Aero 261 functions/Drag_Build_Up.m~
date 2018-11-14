@@ -16,9 +16,6 @@ FFWing = (1+(60/fWing^3)+(fWing/400));
 CD_Wing = (Cf*FFWing*1*SWetWing)/SRefWing;
 %""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-SWetFuselage = 1;
-SRefFuselage = 1;
-
 fFuselage = 75.32/((4/pi)*6.43)^(1/2);
 
 % length or chord length = 75.32m
