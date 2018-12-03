@@ -70,4 +70,3 @@ thrustcalculator(W,p,C_D0,K,S);
 f_W = fuelweight(TSFC,T,p_r,t)
 
 f_V = fuelvolume(f_W)
-
