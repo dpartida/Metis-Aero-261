@@ -1,6 +1,7 @@
 function [e0] = oswaldspan(AR,sweep)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%function "oswaldspan" estimates the oswald span efficiency factor of an
+%aircraft
+
 if sweep < 0
     disp('Invalid sweep angle, must be zero or greater')
 elseif sweep == 0

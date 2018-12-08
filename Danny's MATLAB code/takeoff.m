@@ -1,10 +1,5 @@
 function [Tto,CLmax,vstall_to,vto,xto,tto] = takeoff(Tsl,W,S,rho_to,sweep,g,rho_sl)
 %function "takeoff" estimates the takeoff performance of an aircraft
-% based on:
-%    -takeoff weight (W)
-%    -wing planform area (S)
-%    -air density for the altitude of takeoff
-%    -wing sweep angle (sweep)
 
 Tto=rho_to*Tsl/rho_sl; %thrust provided at takeoff altitude
 

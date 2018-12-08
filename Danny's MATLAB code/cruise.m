@@ -14,6 +14,6 @@ Treqxmax = W / ((sqrt(3) / 2) * Em); %Thrust required to achieve longest range
 
 xmax = (vxmax / (TSFC * (Treqxmax / W))) * log(1 / (1 - z)); %longest range possible
 
-T_c = rho_c * Tsl / rho_sl ; %total thrust provided at cruising altitude
+T_c = rho_c * Tsl / rho_sl ; %total thrust available at cruising altitude
 end
 
