@@ -1,7 +1,0 @@
-function [d_BR] = maxrangecalculator(v_BR,TSFC,Em,dW)
-%This function calculates max range distance
-%   relies on v_BR(velocity best range) and t(time to destination)
-%d_BR = ((v_BR/(TSFC*(1/(((sqrt(3))/2)*Em))))*(log(1/1-dW)));
-d_BR = ((v_BR/(TSFC*(1/(((sqrt(3))/2)*Em))))*(log(1/1-dW)));
-end
-
