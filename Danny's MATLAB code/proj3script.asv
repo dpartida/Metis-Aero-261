@@ -137,7 +137,7 @@ fprintf('\n')
 
 [ CL,Treq ] = thrustcalculator( W,rho_c,Cd0,K,S ); 
 
-[vstall_c,vEm,TreqEm,vxmax,xmax,Treqxmax,T_c,Re_root,Re_tip] = cruise(W,S,K,Cd0,rho_c,vstall_to,TSFC,z,Em,Tsl,rho_sl,u,c_tip,c_root);
+[ vstall_c,vEm,TreqEm,vxmax,xmax,Treqxmax,T_c,Re_root,Re_tip ] = cruise(W,S,K,Cd0,rho_c,vstall_to,TSFC,z,Em,Tsl,rho_sl,rho_c,u,c_tip,c_root);
 
 fprintf('Steady, Level Flight\n')
 fprintf('--------------------\n')
@@ -148,8 +148,7 @@ fprintf('Airspeed for farthest Range: %.4f (m/s)\n',vxmax)
 fprintf('Distance of farthest Range: %.4f (m)\n',xmax)
 fprintf('Thrust Required for Longest Range: %.4f (N)\n',Treqxmax)
 fprintf('Thrust Available: %.4f (N)\n',T_c)
-fprintf('Reynolds Number at Tip: %.4f \n',Re_tip)
-fprintf('Reynolds Number at Root: %.4f \n',Re_root)
+fprintf('Reynolds Number at Tip: 
 fprintf('\n')
 
 %====================================================================
